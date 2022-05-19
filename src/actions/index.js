@@ -1,6 +1,6 @@
-export const addEmail = (name) => ({
-  type: 'ADD_EMAIL',
-  payload: name,
+export const addTrip = (trip) => ({
+  type: 'ADD_TRIP',
+  payload: trip,
 });
 
 const addCurrencies = (currencies) => ({
@@ -11,9 +11,10 @@ const addCurrencies = (currencies) => ({
 export const getCurrencies = () => async (dispatch) => {
   const currencyApi = await fetch('https://economia.awesomeapi.com.br/json/all');
   const currenciesData = await currencyApi.json();
+  const selectedCurrencies = ["USD", "CAD", "EUR", "GBP", "ARS", "JPY" ]
   const filteredCurrencies = Object.keys(currenciesData)
-    .filter((currency) => currency !== 'USDT');
-  dispatch(addCurrencies(filteredCurrencies));
+    .filter((currency) => selectedCurrencies.includes(currency));
+  dispatch(addCurrencies([ ...filteredCurrencies, 'BRL' ]));
 };
 
 const addExpense = (expense) => ({
@@ -21,10 +22,13 @@ const addExpense = (expense) => ({
   payload: expense,
 });
 
-export const setExpense = (walletState) => async (dispatch) => {
+export const setExpense = (expense) => async (dispatch) => {
   const currencyApi = await fetch('https://economia.awesomeapi.com.br/json/all');
   const currenciesData = await currencyApi.json();
-  const payload = { ...walletState, exchangeRates: { ...currenciesData } };
+  const payload = { 
+    ...expense, 
+    exchangeRates: { "BRL": { "code": "BRL", "ask": "1" }, ...currenciesData } 
+  };
   dispatch(addExpense(payload));
 };
 
@@ -33,10 +37,16 @@ export const removeExpense = (expense) => ({
   payload: expense,
 });
 
-export const editExpense = (expense, index, expenses) => {
-  expenses[index] = expense;
+export const editExpense = (expense, index) => {
   return {
     type: 'EDIT_EXPENSE',
-    payload: expenses,
+    payload: [index, expense],
+  };
+};
+
+export const saveEditExpense = (expense, index, expenses) => {
+  return {
+    type: 'SAVE_EDIT_EXPENSE',
+    payload: expenses[index] = expense,
   };
 };

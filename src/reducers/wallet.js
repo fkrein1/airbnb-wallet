@@ -2,6 +2,7 @@
 const INITIAL_STATE = {
   currencies: [],
   expenses: [],
+  expenseToEdit: [],
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -16,7 +17,9 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       expenses: [...state.expenses.filter((expense) => expense !== action.payload)],
     };
   case 'EDIT_EXPENSE':
-    return { ...state, expenses: action.payload };
+    return { ...state, expenseToEdit: action.payload };
+  case 'SAVE_EDIT_EXPENSE':
+    return { ...state, expenseToEdit: [], expenses: action.payload };
   default:
     return state;
   }
