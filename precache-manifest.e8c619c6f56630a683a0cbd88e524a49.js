@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "52e568d7727de3c85f9bdf67161d0041",
+    "revision": "59ef6f24942d26cd10e4f064d530c673",
     "url": "/travel-wallet/index.html"
   },
   {
-    "revision": "5e9c8bed8b1f671dd3e8",
-    "url": "/travel-wallet/static/css/main.7ffaa5c9.chunk.css"
+    "revision": "fdef9e74b269aa872d6e",
+    "url": "/travel-wallet/static/css/main.5bc6cc4a.chunk.css"
   },
   {
     "revision": "3d7385e90497e9264f56",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/travel-wallet/static/js/2.b934acf5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5e9c8bed8b1f671dd3e8",
-    "url": "/travel-wallet/static/js/main.5387c293.chunk.js"
+    "revision": "fdef9e74b269aa872d6e",
+    "url": "/travel-wallet/static/js/main.f4a0138b.chunk.js"
   },
   {
     "revision": "f74bad08546b2e8c3ff7",

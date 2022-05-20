@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/travel-wallet/static/css/main.7ffaa5c9.chunk.css",
-    "main.js": "/travel-wallet/static/js/main.5387c293.chunk.js",
-    "main.js.map": "/travel-wallet/static/js/main.5387c293.chunk.js.map",
+    "main.css": "/travel-wallet/static/css/main.5bc6cc4a.chunk.css",
+    "main.js": "/travel-wallet/static/js/main.f4a0138b.chunk.js",
+    "main.js.map": "/travel-wallet/static/js/main.f4a0138b.chunk.js.map",
     "runtime-main.js": "/travel-wallet/static/js/runtime-main.e94f38c9.js",
     "runtime-main.js.map": "/travel-wallet/static/js/runtime-main.e94f38c9.js.map",
     "static/js/2.b934acf5.chunk.js": "/travel-wallet/static/js/2.b934acf5.chunk.js",
     "static/js/2.b934acf5.chunk.js.map": "/travel-wallet/static/js/2.b934acf5.chunk.js.map",
     "index.html": "/travel-wallet/index.html",
-    "precache-manifest.400075f5e075e2ef01e3115b7ff1e6dc.js": "/travel-wallet/precache-manifest.400075f5e075e2ef01e3115b7ff1e6dc.js",
+    "precache-manifest.e8c619c6f56630a683a0cbd88e524a49.js": "/travel-wallet/precache-manifest.e8c619c6f56630a683a0cbd88e524a49.js",
     "service-worker.js": "/travel-wallet/service-worker.js",
-    "static/css/main.7ffaa5c9.chunk.css.map": "/travel-wallet/static/css/main.7ffaa5c9.chunk.css.map",
+    "static/css/main.5bc6cc4a.chunk.css.map": "/travel-wallet/static/css/main.5bc6cc4a.chunk.css.map",
     "static/js/2.b934acf5.chunk.js.LICENSE.txt": "/travel-wallet/static/js/2.b934acf5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e94f38c9.js",
     "static/js/2.b934acf5.chunk.js",
-    "static/css/main.7ffaa5c9.chunk.css",
-    "static/js/main.5387c293.chunk.js"
+    "static/css/main.5bc6cc4a.chunk.css",
+    "static/js/main.f4a0138b.chunk.js"
   ]
 }
