@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  trip: 'Las Vegas',
+  trip: '',
 };
 
 const tripReducer = (state = INITIAL_STATE, action) => {

@@ -26,7 +26,8 @@ export const setExpense = (expense) => async (dispatch) => {
   const currencyApi = await fetch('https://economia.awesomeapi.com.br/json/all');
   const currenciesData = await currencyApi.json();
   const payload = { 
-    ...expense, 
+    ...expense,
+    id: currenciesData.USD.timestamp,
     exchangeRates: { "BRL": { "code": "BRL", "ask": "1" }, ...currenciesData } 
   };
   dispatch(addExpense(payload));

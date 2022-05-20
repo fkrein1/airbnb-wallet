@@ -52,7 +52,7 @@ class Edit extends React.Component {
         { expenseToEdit !== undefined && (
           <form>
             <label htmlFor="description">
-              NAME
+              DESCRIPTION
               <br></br>
               <input
                 id="description"

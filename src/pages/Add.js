@@ -40,7 +40,7 @@ class Add extends React.Component {
         <nav><Link to="/wallet">&lt;</Link></nav>
         <form>
           <label htmlFor="description">
-            NAME
+            DESCRIPTION
             <br></br>
             <input
               id="description"
