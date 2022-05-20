@@ -69,7 +69,7 @@ class Edit extends React.Component {
               <input
                 id="value"
                 name="value"
-                type="text"
+                type="number"
                 value={ value }
                 onChange={ this.handleChange }
               />

@@ -27,7 +27,7 @@ class Home extends React.Component {
     return (
       <div id="home" className="wrapper">
         <input
-          type="trip"
+          type="text"
           name="trip"
           value={ trip }
           onChange={ this.handleChange }
