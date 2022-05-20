@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/travel-wallet/static/css/main.7ffaa5c9.chunk.css",
+    "main.js": "/travel-wallet/static/js/main.5387c293.chunk.js",
+    "main.js.map": "/travel-wallet/static/js/main.5387c293.chunk.js.map",
+    "runtime-main.js": "/travel-wallet/static/js/runtime-main.e94f38c9.js",
+    "runtime-main.js.map": "/travel-wallet/static/js/runtime-main.e94f38c9.js.map",
+    "static/js/2.b934acf5.chunk.js": "/travel-wallet/static/js/2.b934acf5.chunk.js",
+    "static/js/2.b934acf5.chunk.js.map": "/travel-wallet/static/js/2.b934acf5.chunk.js.map",
+    "index.html": "/travel-wallet/index.html",
+    "precache-manifest.400075f5e075e2ef01e3115b7ff1e6dc.js": "/travel-wallet/precache-manifest.400075f5e075e2ef01e3115b7ff1e6dc.js",
+    "service-worker.js": "/travel-wallet/service-worker.js",
+    "static/css/main.7ffaa5c9.chunk.css.map": "/travel-wallet/static/css/main.7ffaa5c9.chunk.css.map",
+    "static/js/2.b934acf5.chunk.js.LICENSE.txt": "/travel-wallet/static/js/2.b934acf5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e94f38c9.js",
+    "static/js/2.b934acf5.chunk.js",
+    "static/css/main.7ffaa5c9.chunk.css",
+    "static/js/main.5387c293.chunk.js"
+  ]
+}
