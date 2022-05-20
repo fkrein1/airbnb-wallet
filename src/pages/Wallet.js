@@ -35,15 +35,15 @@ class Wallet extends React.Component {
             <p>Total spent </p>
             <p id="spent">{`R$${ this.sumExpenses() }`}</p>
             <Link to="/add">
-            <svg width="141" height="134" viewBox="0 0 151 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg alt="addBtn" width="141" height="134" viewBox="0 0 151 144" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.8" filter="url(#filter0_f_1_484)">
               <circle cx="75.4688" cy="75.5938" r="26.7188" fill="#1F615C"/>
               </g>
               <circle cx="75" cy="61" r="37.5" fill="#FF385C"/>
-              <path d="M85.5469 61H64.4531M75 50.4531V71.5469V50.4531Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M85.5469 61H64.4531M75 50.4531V71.5469V50.4531Z" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
               <defs>
-              <filter id="filter0_f_1_484" x="0.75" y="0.875" width="149.438" height="149.438" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter0_f_1_484" x="0.75" y="0.875" width="149.438" height="149.438" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
               <feGaussianBlur stdDeviation="24" result="effect1_foregroundBlur_1_484"/>
               </filter>
@@ -53,7 +53,10 @@ class Wallet extends React.Component {
           </div>
         </header>
           { expenses.map((expense, index) => (
-            <div  key={ expense.exchangeRates.USD.timestamp } className="expense-card">
+            <div
+              key={`${expense.exchangeRates.USD.timestamp}-${expense.description}`}
+              className="expense-card"
+            >
               <div className="expense-description">
                 <p className="expense-focus">{ expense.description }</p>
                 <p>{ expense.tag }</p>   

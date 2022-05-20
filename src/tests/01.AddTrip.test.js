@@ -15,33 +15,14 @@ describe('1) Initial render and add trip functionality:', () => {
     expect(button).toBeInTheDocument();
   });
 
+  it('saves trip destination after submit', () => {
+    const { history, store } = renderWithRouterAndRedux(<App />);
+    const tripInput = screen.getByRole('textbox');
+    const button = screen.getByRole('button', { name: /create trip/i });
+    userEvent.type(tripInput, 'France');
+    userEvent.click(button);
+    const trip = screen.getByText('France');
+    expect(trip).toBeInTheDocument()
+    expect(history.location.pathname).toBe('/wallet');
+  })
 })
-
-
-
-// describe('Tests if mock search works', () => {
-//   const koromon = [
-//     {
-//       name: 'Koromon',
-//       img: 'https://digimon.shadowsmith.com/img/koromon.jpg',
-//       level: 'In Training',
-//     },
-//   ];
-//   it('renders Koromon', async () => {
-//     jest.spyOn(global, 'fetch');
-//     global.fetch.mockResolvedValue({
-//       json: jest.fn().mockResolvedValue(koromon),
-//     });
-
-//     render(<App />);
-//     const textBox = screen.getByRole('textbox', { name: /digimon/i });
-//     const btn = screen.getByRole('button', { name: /search digimon/i });
-//     userEvent.type(textBox, 'koromon');
-//     userEvent.click(btn);
-
-//     const digimonImage = await screen.findByRole('img', { name: /koromon/i });
-//     expect(digimonImage).toBeInTheDocument();
-//     expect(global.fetch).toBeCalledTimes(1);
-//     expect(global.fetch).toBeCalledWith('https://digimon-api.vercel.app/api/digimon/name/koromon');
-//   });
-// })
