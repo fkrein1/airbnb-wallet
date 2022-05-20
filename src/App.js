@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Wallet from './pages/Wallet';
 import Add from './pages/Add';
 import Edit from './pages/Edit';
+import './App.css'
 
 function App() {
   return (

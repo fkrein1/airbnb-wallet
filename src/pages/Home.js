@@ -19,30 +19,25 @@ class Home extends React.Component {
     const { trip } = this.state;
     dispatch(addTrip(trip));
     this.setState({trip: ''});
-    history.push('/add')
-  }
-
-  validateTrip = (password) => {
-    const minChar = 2;
-    return password.length >= minChar;
+    history.push('/wallet')
   }
 
   render() {
     const { trip } = this.state;
     return (
-      <div>
+      <div id="home" className="wrapper">
         <input
           type="trip"
           name="trip"
           value={ trip }
           onChange={ this.handleChange }
+          placeholder="Where are you going?"
         />
         <button
           type="button"
           onClick={ this.handleAddTrip }
-          disabled={ !this.validateTrip(trip) }
         >
-          Create Trip
+          Create trip
         </button>
       </div>
     );

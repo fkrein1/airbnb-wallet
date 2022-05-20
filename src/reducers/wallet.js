@@ -2,8 +2,8 @@
 const INITIAL_STATE = {
   currencies: [],
   expenses: [],
-  expenseToEdit: [],
-};
+  expenseToEdit: {},
+}
 
 const walletReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {

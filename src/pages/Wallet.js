@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeExpense, editExpense } from '../actions';
-import Nav from '../components/Nav';
+import { Link } from 'react-router-dom';
 
 class Wallet extends React.Component {
   sumExpenses = () => {
@@ -26,39 +26,61 @@ class Wallet extends React.Component {
   render() {
     const { trip, expenses, deleteExpense } = this.props;
     return (
-      <div>
+      <div className="wrapper">
+        <nav></nav>
         <header>
-          <p>{ trip }</p>
-          <p>Total: { this.sumExpenses() } BRL</p>
+          <p>Your trip to</p>
+          <p id="trip">{ trip }</p>
+          <div>
+            <p>Total spent </p>
+            <p id="spent">{`R$${ this.sumExpenses() }`}</p>
+            <Link to="/add">
+            <svg width="141" height="134" viewBox="0 0 151 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8" filter="url(#filter0_f_1_484)">
+              <circle cx="75.4688" cy="75.5938" r="26.7188" fill="#1F615C"/>
+              </g>
+              <circle cx="75" cy="61" r="37.5" fill="#FF385C"/>
+              <path d="M85.5469 61H64.4531M75 50.4531V71.5469V50.4531Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+              <filter id="filter0_f_1_484" x="0.75" y="0.875" width="149.438" height="149.438" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+              <feGaussianBlur stdDeviation="24" result="effect1_foregroundBlur_1_484"/>
+              </filter>
+              </defs>
+            </svg>
+          </Link>
+          </div>
         </header>
           { expenses.map((expense, index) => (
-            <ul key={ expense.exchangeRates.USD.timestamp }>
-              <li>{ expense.description }</li>
-
-              <li>{ `${Number(expense.value).toFixed(2)} ${expense.currency}` } </li>
-              <li>{ `${this.askRate(expense).toFixed(2)} Exchange Rate` }</li>
-              <li>{ `${(this.askRate(expense) * Number(expense.value)).toFixed(2)} BRL`}</li>
-              <li>{ expense.tag }</li>
-              <li>{ expense.method }</li>
-              <li>
+            <div  key={ expense.exchangeRates.USD.timestamp } className="expense-card">
+              <div className="expense-description">
+                <p className="expense-focus">{ expense.description }</p>
+                <p>{ expense.tag }</p>   
+              </div> 
+              <div>
+                <p className="expense-focus">{ `${Number(expense.value).toFixed(2)} ${expense.currency}` } </p>
+                <p>{ expense.method }</p>            
+                <p>{ `${(this.askRate(expense) * Number(expense.value)).toFixed(2)} BRL`}</p>
+              </div>
+              <div className="card-button" >
                 <button
                   type="button"
                   onClick={ () => this.editExpense(expense, index) }
                 >
-                  Editar
+                  Edit
                 </button>
-              </li>
-              <li>
                 <button
                   type="button"
                   onClick={ () => deleteExpense(expense) }
                 >
-                  Excluir
+                  Delete
                 </button>
-              </li>
-            </ul>
+              </div>
+            </div>
           ))}
-        <Nav />
+
+          
       </div>
     );
   }

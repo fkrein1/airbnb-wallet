@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCurrencies, setExpense } from '../actions';
-import Nav from '../components/Nav';
+import { Link } from 'react-router-dom';
 
 class Add extends React.Component {
   constructor() {
@@ -25,20 +25,23 @@ class Add extends React.Component {
   }
 
   submitExpense = () => {
-    const { addExpense } = this.props;
+    const { addExpense, history } = this.props;
     const { value, description, currency, method, tag } = this.state;
     addExpense({ value, description, currency, method, tag });
     this.setState({ value: '', description: '' });
+    history.push('/wallet')
   }
 
   render() {
     const { currencies } = this.props;
-    const { value, description, currency, method, tag, btnAdd } = this.state;
+    const { value, description, currency, method, tag } = this.state;
     return (
-      <div>
+      <div className="wrapper">
+        <nav><Link to="/wallet">&lt;</Link></nav>
         <form>
           <label htmlFor="description">
-            Description:
+            NAME
+            <br></br>
             <input
               id="description"
               name="description"
@@ -49,7 +52,8 @@ class Add extends React.Component {
           </label>
 
           <label htmlFor="value">
-            Value:
+            AMOUNT
+            <br></br>
             <input
               id="value"
               name="value"
@@ -59,7 +63,8 @@ class Add extends React.Component {
             />
           </label>
           <label htmlFor="currency">
-            Currency:
+            CURRENCY
+            <br></br>
             <select
               id="currency"
               name="currency"
@@ -77,7 +82,8 @@ class Add extends React.Component {
           </label>
 
           <label htmlFor="paymentMethod">
-            Payment Method:
+            PAYMENT METHOD
+            <br></br>
             <select
               id="paymentMethod"
               name="method"
@@ -91,7 +97,8 @@ class Add extends React.Component {
           </label>
 
           <label htmlFor="category">
-            Category:
+            CATEGORY
+            <br></br>
             <select
               id="category"
               name="tag"
@@ -105,11 +112,10 @@ class Add extends React.Component {
             </select>
           </label>
 
-          <button type="button" onClick={ this.submitExpense } disabled={ btnAdd }>
+          <button type="button" onClick={ this.submitExpense }>
             Add expense
           </button>
         </form>
-        <Nav />
       </div>
     );
   }

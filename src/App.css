@@ -1,0 +1,226 @@
+/* =========== GENERAL ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--light-text);
+}
+
+:root {
+  --brand-color: rgb(255, 56, 92);
+  --dark-text: rgb(34, 34, 34);
+  --light-text: rgb(113, 113, 113);
+  --light-bg: rgb(247, 247, 247);
+  --border: rgb(221, 221, 221);
+  font-size: 62.5%; /* padrão 10px */
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;  
+   width: 100%;
+   height: 100%;
+   background-color: var(--light-bg);
+   text-align: center;
+   font-size: 1.6rem;
+   overflow: overlay;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  width: min(50rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
+/* ===== HOME ====== */
+
+#home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 25rem;
+  align-items: center;
+  margin-inline: auto;
+
+}
+
+#home button {
+  background-color: var(--brand-color);
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  width: 30rem;
+  height: 7rem;
+  font-weight: 700;
+  border:none;
+}
+
+#home input {
+  width: 30rem;
+  padding: 1rem;
+  font-size: 2rem;
+  height: 7rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: var(--border) solid;
+  font-weight: 700;
+}
+
+/* ====== NAV ======== */
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--brand-color);
+  height: 5rem;
+}
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  background-color: var(--brand-color);
+  color:white;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* ===== FORM ===== */
+
+form {
+  display: flex;
+  flex-flow: column;
+  gap:2rem;
+  font-size: 2rem; 
+  margin-top: 2rem;
+  color: var(--light-text);
+  width: 80%;
+  margin-inline:auto;
+}
+
+form input{ 
+  margin-top: 1rem;
+  width: 70%;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  border: var(--border) solid;
+  font-weight: 300;
+  width: 100%;
+  height: 3.5rem;
+}
+
+form select {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  border: var(--border) solid;
+  font-weight: 300;
+  width:100%;
+  height: 3.5rem;
+}
+
+form label {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 700;
+  text-align: left;
+}
+
+form button {
+  background-color: var(--brand-color);
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  width: 100%;
+  font-weight: 700;
+  border:none;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+/* ===== HEADER WALLET ===== */
+
+header {
+  color: var(--light-text);
+  margin-top: 2rem;
+}
+
+header p {
+  font-weight: 700;
+  text-align: left;
+  margin-left: 3rem;
+}
+
+#trip {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+header div p {
+  text-align: center;
+  margin:0;
+
+}
+
+#spent {
+  font-size: 4rem;
+  text-align: center;
+  margin:0;
+}
+
+/* ====== EXPENSES ===== */
+
+.expense-card {
+  display: flex;
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 95%;
+  background-color: white;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-inline:auto;
+  text-align: left;
+  justify-content: space-around;
+  flex:auto;
+}
+
+.expense-description { 
+  flex-basis: 40%;
+  overflow-wrap: break-word;
+}
+
+.expense-focus {
+  font-size: 2rem;
+}
+
+.expense-card button {
+  background-color: var(--brand-color);
+  color: white;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 5rem;
+  height: 2.4rem;
+  border:none;
+  margin-inline: auto;
+  margin-bottom: 0.2rem;
+}
+
+.card-button {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: space-around;
+}

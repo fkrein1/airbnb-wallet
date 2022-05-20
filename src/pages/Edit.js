@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { saveEditExpense } from '../actions';
-import Nav from '../components/Nav';
+import { Link } from 'react-router-dom';
+
 
 class Edit extends React.Component {
   constructor() {
@@ -46,12 +47,13 @@ class Edit extends React.Component {
     const { expenseToEdit, currencies } = this.props;
     const { value, description, currency, method, tag } = this.state;
     return (
-      <div>
-        { expenseToEdit === undefined && <h2>Expense not selected</h2>}
+      <div className="wrapper">
+        <nav><Link to="/wallet">&lt;</Link></nav>
         { expenseToEdit !== undefined && (
           <form>
             <label htmlFor="description">
-              Description:
+              NAME
+              <br></br>
               <input
                 id="description"
                 name="description"
@@ -62,7 +64,8 @@ class Edit extends React.Component {
             </label>
   
             <label htmlFor="value">
-              Value:
+              AMOUNT
+              <br></br>
               <input
                 id="value"
                 name="value"
@@ -72,7 +75,8 @@ class Edit extends React.Component {
               />
             </label>
             <label htmlFor="currency">
-              Currency:
+              CURRENCY
+              <br></br>
               <select
                 id="currency"
                 name="currency"
@@ -90,7 +94,8 @@ class Edit extends React.Component {
             </label>
   
             <label htmlFor="paymentMethod">
-              Payment Method:
+              PAYMENT METHOD
+              <br></br>
               <select
                 id="paymentMethod"
                 name="method"
@@ -104,7 +109,8 @@ class Edit extends React.Component {
             </label>
   
             <label htmlFor="category">
-              Category:
+              CATEGORY
+              <br></br>
               <select
                 id="category"
                 name="tag"
@@ -124,7 +130,6 @@ class Edit extends React.Component {
           </form>
 
         )}
-        <Nav />
       </div>
     );
   }
