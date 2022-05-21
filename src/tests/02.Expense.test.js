@@ -5,9 +5,9 @@ import renderWithRouterAndRedux from './helper/renderWithRouterAndRedux';
 import { initialStateWithoutExpenses, initialStateWithExpenses, currencyData } from './mock/mock'
 import App from '../App';
 
-describe('2) Test initial wallet render and add, delete and edit expense', () => {
-  afterEach(() => jest.clearAllMocks());
+afterEach(() => jest.clearAllMocks());
 
+describe('2) Test initial wallet render and add, delete and edit expense', () => {
   it('renders wallet', () => {
     renderWithRouterAndRedux(<App />, { initialState: initialStateWithExpenses, initialEntries: ['/wallet']});
     const trip = screen.getByText(/paris/i);
@@ -42,6 +42,8 @@ describe('2) Test initial wallet render and add, delete and edit expense', () =>
     userEvent.click(addBtn);
     expect(history.location.pathname).toBe('/add');
 
+    const dolar = screen.queryByText('USD')
+
     const descriptionInput = screen.getByRole('textbox', { name: /description/i});
     userEvent.type(descriptionInput, 'car rental');
     expect(descriptionInput).toHaveValue('car rental')
@@ -58,9 +60,6 @@ describe('2) Test initial wallet render and add, delete and edit expense', () =>
     expect(global.fetch).toHaveBeenCalled()
     expect(global.fetch).toBeCalledTimes(2)
     expect(global.fetch).toBeCalledWith('https://economia.awesomeapi.com.br/json/all')
-
-    expect(store.getState()).toBe(0)
-    debug()
 
   })
 })
